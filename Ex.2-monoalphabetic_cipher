@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char plaintext[100];
+    char key[27] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    int i;
+
+    printf("Enter plaintext (uppercase): ");
+    scanf("%s", plaintext);
+
+    printf("Ciphertext: ");
+
+    for(i=0; plaintext[i]!='\0'; i++) {
+        if(plaintext[i]>='A' && plaintext[i]<='Z')
+            printf("%c", key[plaintext[i]-'A']);
+        else
+            printf("%c", plaintext[i]);
+    }
+
+    return 0;
+}
+
+output:
+Enter plaintext (uppercase): SIMATS 
+Ciphertext: LODQZL
